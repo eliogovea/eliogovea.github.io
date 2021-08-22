@@ -1,0 +1,4 @@
+[submodule "themes/toha"]
+	path = themes/toha
+	url = https://github.com/eliogovea/toha.git
+	branch = add-math
