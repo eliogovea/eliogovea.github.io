@@ -1,0 +1,45 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Developer
+# your company information
+company:
+  name: F-Secure
+  url: "https://www.f-secure.com/"
+
+# your resume. this file path should be relative to you "static" directory
+# resume: "files/resume.pdf"
+
+# a summary about you
+# summary: 'TODO: '
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+# - name: Email
+#   icon: "fas fa-envelope"
+#   url: "example@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/eliogovea"
+
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/elio-alejandro-govea-aguilar-557598172/"
+
+# - name: Stackoverflow
+#   icon: "fab fa-stack-overflow"
+#   url: "#"
+
+# - name: Twitter
+#   icon: "fab fa-twitter"
+#   url: "#"
