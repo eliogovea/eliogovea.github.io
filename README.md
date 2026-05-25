@@ -29,9 +29,10 @@ python3 -m http.server 8000
 After editing `cv.tex`:
 
 ```sh
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=assets cv.tex
+docker run --rm -v "$(pwd):/work" -w /work texlive/texlive \
+  pdflatex -interaction=nonstopmode -halt-on-error -output-directory=assets cv.tex
+# run twice to resolve cross-references
+docker run --rm -v "$(pwd):/work" -w /work texlive/texlive \
+  pdflatex -interaction=nonstopmode -halt-on-error -output-directory=assets cv.tex
 rm assets/cv.{aux,log,out}
 ```
-
-Requires a TeX distribution with `moderncv` (e.g. MacTeX, TeX Live with
-`texlive-latex-extra` and `texlive-fonts-extra`).
