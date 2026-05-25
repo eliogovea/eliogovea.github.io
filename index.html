@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elio Govea — Software Developer</title>
+  <meta name="description" content="Elio Govea — Senior Software Developer at F-Secure, Helsinki. C++, networking, embedded Linux. Former ICPC World Finalist." />
+  <meta name="author" content="Elio Govea" />
+  <meta property="og:title" content="Elio Govea — Software Developer" />
+  <meta property="og:description" content="Senior Software Developer · Helsinki · Former ICPC World Finalist" />
+  <meta property="og:type" content="profile" />
+  <link rel="canonical" href="https://eliogovea.github.io/" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/blog/">Notes</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+
+    <header class="identity">
+      <h1>Elio Govea</h1>
+      <p class="role">Software Developer</p>
+      <ul class="contact">
+        <li>Helsinki, Finland</li>
+        <li><a href="mailto:eliogovea1993@gmail.com">eliogovea1993@gmail.com</a></li>
+        <li><a href="https://github.com/eliogovea" rel="me">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/elio-alejandro-govea-aguilar-557598172/" rel="me">LinkedIn</a></li>
+      </ul>
+    </header>
+
+    <section id="profile" aria-labelledby="profile-h">
+      <h2 id="profile-h">Profile</h2>
+      <p>
+        Software developer with a background in C++, networking, and embedded Linux.
+        Former <a href="https://icpc.global/ICPCID/PNF1J4PZOUVQ">ICPC</a> World Finalist;
+        currently building security products at F-Secure.
+      </p>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-h">
+      <h2 id="experience-h">Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.f-secure.com/">F-Secure</a> · Senior Developer</h3>
+          <span class="meta"><time datetime="2023-05">05/2023</time> – present</span>
+        </div>
+        <p class="entry-sub">Helsinki, Finland</p>
+        <ul>
+          <li>
+            Designed solutions that cut Content Delivery Network (CDN) costs by <strong>80%</strong> with minimal impact on end-users.
+            <ul>
+              <li>Analyzed CDN usage and identified key optimization areas.</li>
+              <li>Designed a custom caching strategy that significantly decreased the volume of data transferred via CDN.</li>
+              <li>Kept changes backend-focused to avoid client-side updates and lengthy deployment negotiations.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.f-secure.com/">F-Secure</a> · Developer</h3>
+          <span class="meta"><time datetime="2021-12">12/2021</time> – <time datetime="2023-04">04/2023</time></span>
+        </div>
+        <p class="entry-sub">Helsinki, Finland</p>
+        <ul>
+          <li>
+            Built an SDK providing security features for home routers.
+            <ul>
+              <li>Developed most features in C++.</li>
+              <li>Supported multiple architectures: x86, ARM, MIPS.</li>
+              <li>Filtered, parsed, and generated traffic for IPv4, IPv6, DHCP, UDP, TCP, DNS, HTTP, and HTTPS.</li>
+              <li>Worked with Linux networking interfaces: netlink, netfilter, iptables, nfqueue, nflog, conntrack.</li>
+              <li>Integrated features into cloud services.</li>
+              <li>Collaborated closely with cross-functional teams to gather requirements, iterate on designs, and address diverse project needs.</li>
+            </ul>
+          </li>
+          <li>
+            Developed applications that secure devices connected to home routers.
+            <ul>
+              <li>Implemented features to prevent clients from accessing malicious content on the internet.</li>
+              <li>Integrated with existing back-end services.</li>
+            </ul>
+          </li>
+          <li>
+            Developed parental-control features for home devices.
+            <ul>
+              <li>Implemented features to force clients to resolve safe versions of major browser engines.</li>
+              <li>Integrated with existing back-end services.</li>
+            </ul>
+          </li>
+          <li>
+            Designed and integrated features to collect traffic statistics.
+            <ul>
+              <li>Integrated with back-end services to detect traffic anomalies.</li>
+              <li>Minimized impact on networking performance.</li>
+              <li>Used Linux interfaces: nfqueue, nflog, conntrack.</li>
+            </ul>
+          </li>
+          <li>
+            Implemented device recognition and fingerprinting features.
+            <ul>
+              <li>Filtered multicast traffic.</li>
+              <li>Used Linux interfaces: nflog, BPF.</li>
+              <li>Minimized impact on networking performance.</li>
+              <li>Integrated with multiple back-end services.</li>
+            </ul>
+          </li>
+          <li>Implemented recovery mechanisms for OS- and cloud-service-level errors.</li>
+          <li>
+            Developed SDK integrations for reference platforms.
+            <ul>
+              <li>Simplified product demos.</li>
+              <li>Streamlined future integrations.</li>
+            </ul>
+          </li>
+          <li>
+            Designed and optimized the build system for multiple cross-platform C/C++ applications.
+            <ul>
+              <li>Supported multiple toolchains and architectures.</li>
+              <li>Delivered fast and reproducible builds.</li>
+              <li>Implemented with CMake and GNU Make.</li>
+            </ul>
+          </li>
+          <li>
+            Designed and implemented continuous-integration pipelines.
+            <ul>
+              <li>Enforced code quality through code coverage, static analysis, and dynamic analysis.</li>
+              <li>Provided builds for multiple architectures (x86, ARM, MIPS) and reference platforms.</li>
+              <li>Implemented using Jenkins and AWS.</li>
+            </ul>
+          </li>
+          <li>Designed and implemented testing tools in Python and Robot Framework.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.f-secure.com/">F-Secure</a> · Software Developer</h3>
+          <span class="meta"><time datetime="2020-09">09/2020</time> – <time datetime="2021-11">11/2021</time></span>
+        </div>
+        <p class="entry-sub">Poznań, Poland</p>
+        <ul>
+          <li>Contributed to a core C++ SDK providing security features for home routers.</li>
+          <li>Optimized a notifications system for security events.</li>
+          <li>Developed embedded Linux clients to consume cloud services.</li>
+          <li>Added endpoints to existing REST APIs.</li>
+          <li>Improved internal C++ interfaces and data structures.</li>
+          <li>Fixed bugs in existing products.</li>
+          <li>Added new interfaces using Unix domain sockets for communication between clients and services.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> · Software Engineer</h3>
+          <span class="meta"><time datetime="2018-01">01/2018</time> – <time datetime="2020-08">08/2020</time></span>
+        </div>
+        <p class="entry-sub">Pinar del Río, Cuba</p>
+        <ul>
+          <li>
+            Designed and implemented applications to collect and visualize vibration signals using C++ and Qt.
+            <ul>
+              <li>Real-time signal processing.</li>
+              <li>Technologies: C++, IMU, Arduino, serial communication, Qt.</li>
+            </ul>
+          </li>
+          <li>
+            Designed and implemented applications to collect and visualize sensor data for object position tracking.
+            <ul>
+              <li>Technologies: C++, IMU, Arduino, serial communication, Linux, OpenGL.</li>
+            </ul>
+          </li>
+          <li>
+            Assisted in teaching programming courses.
+            <ul>
+              <li>Prepared lectures on C++, Python, Arduino, Linux, and Raspberry Pi.</li>
+              <li>Ran lab sessions and helped students with programming projects.</li>
+              <li>Designed and graded assignments.</li>
+            </ul>
+          </li>
+          <li>
+            ICPC judge for the Caribbean region.
+            <ul>
+              <li>Evaluated and proposed challenging programming problems and solutions for the ICPC Caribbean Finals.</li>
+            </ul>
+          </li>
+          <li>
+            ICPC coach.
+            <ul>
+              <li>Coached a team to the ICPC Latin American Finals.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> · DevOps Engineer</h3>
+          <span class="meta"><time datetime="2017-09">09/2017</time> – <time datetime="2017-12">12/2017</time></span>
+        </div>
+        <p class="entry-sub">Pinar del Río, Cuba</p>
+        <ul>
+          <li>Set up and maintained multiple servers.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
+      <div class="projects-grid">
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/dev-env-cpp">C++ project template</a></h3>
+          <p class="tagline">Reusable scaffold for cross-platform C++ work.</p>
+          <p>Docker environment with common tools, CMake presets for multiple configurations, and CI pipelines for code coverage and documentation.</p>
+          <ul class="project-tags">
+            <li>C++</li><li>CMake</li><li>Docker</li><li>CI</li>
+          </ul>
+        </article>
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/dns">DNS library</a></h3>
+          <p class="tagline">Parsing and generating DNS messages from scratch.</p>
+          <p>Library to parse and emit DNS messages, with example resolvers demonstrating common queries.</p>
+          <ul class="project-tags">
+            <li>C++</li><li>Networking</li><li>DNS</li>
+          </ul>
+        </article>
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/suffix-automaton-vis">Suffix automaton visualization</a></h3>
+          <p class="tagline">Interactive walk-through of a classic string algorithm.</p>
+          <p>TypeScript and D3 tool that illustrates each step of building a suffix automaton.</p>
+          <ul class="project-tags">
+            <li>TypeScript</li><li>D3</li><li>Algorithms</li>
+          </ul>
+        </article>
+      </div>
+      <a class="see-all" href="/projects.html">See all projects →</a>
+    </section>
+
+    <section id="education" aria-labelledby="education-h">
+      <h2 id="education-h">Education</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> · B.Sc. Telecommunications and Electronics Engineering</h3>
+          <span class="meta"><time datetime="2012-09">09/2012</time> – <time datetime="2017-07">07/2017</time></span>
+        </div>
+        <p class="entry-sub">Pinar del Río, Cuba</p>
+        <ul>
+          <li>GPA <strong>4.95 / 5.00</strong></li>
+          <li>ICPC World Finalist</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="achievements" aria-labelledby="achievements-h">
+      <h2 id="achievements-h">Achievements</h2>
+      <ul>
+        <li><strong>Honourable Mention</strong> — 2018 ACM ICPC World Finals</li>
+        <li><strong>2nd Place (Silver Medal)</strong> — 2016 ACM ICPC Latin American Finals</li>
+        <li><strong>4th Place</strong> — 2015 ACM ICPC Latin American Finals</li>
+        <li><strong>Top 1000</strong> — 2019 Google Code Jam</li>
+      </ul>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skill-group">
+        <span class="label">Languages</span>
+        <ul class="pills">
+          <li>C</li><li>C++</li><li>Python</li><li>Bash</li><li>CMake</li><li>GNU Make</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Systems &amp; tooling</span>
+        <ul class="pills">
+          <li>Linux</li><li>Buildroot</li><li>OpenWrt</li><li>Git</li><li>Docker</li><li>LXC</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Concepts</span>
+        <ul class="pills">
+          <li>Algorithms</li><li>Data Structures</li><li>Networking</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Protocols</span>
+        <ul class="pills">
+          <li>IP</li><li>DHCP</li><li>UDP</li><li>TCP</li><li>DNS</li><li>HTTP</li><li>TLS</li><li>QUIC</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="languages" aria-labelledby="languages-h">
+      <h2 id="languages-h">Languages</h2>
+      <ul>
+        <li><strong>Spanish</strong> — Native</li>
+        <li><strong>English</strong> — Full professional proficiency</li>
+      </ul>
+    </section>
+
+    <section id="cv-download" aria-labelledby="cv-download-h">
+      <h2 id="cv-download-h">Curriculum Vitae</h2>
+      <p>A printable PDF version is available for download.</p>
+      <a class="cv-download" href="assets/cv.pdf" download>Download CV (PDF)</a>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year">2026</span> Elio Govea</span>
+      <span><a href="https://github.com/eliogovea/eliogovea.github.io">Source on GitHub</a></span>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes — Elio Govea</title>
+  <meta name="description" content="Notes and writing by Elio Govea." />
+  <link rel="canonical" href="https://eliogovea.github.io/blog/" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/blog/" aria-current="page">Notes</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+
+    <header class="identity">
+      <h1>Notes</h1>
+      <p class="role">Short writing on what I'm learning.</p>
+    </header>
+
+    <section aria-label="Posts">
+      <!-- When adding a post, copy blog/_template.html, rename to e.g. blog/2026-06-quic-handshake.html,
+           and list it here in reverse chronological order:
+
+        <ul class="post-list">
+          <li>
+            <time datetime="2026-06-15">15 June 2026</time>
+            <a href="2026-06-quic-handshake.html">Notes on the QUIC handshake</a>
+          </li>
+        </ul>
+      -->
+      <div class="empty-state">Nothing here yet. Check back soon.</div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 Elio Govea</span>
+      <span><a href="/">← Home</a></span>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

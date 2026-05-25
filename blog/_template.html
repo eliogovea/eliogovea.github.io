@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  Blog post template.
+
+  To publish a new post:
+    1. Copy this file to blog/YYYY-MM-slug.html (e.g. blog/2026-06-quic-handshake.html)
+    2. Fill in <title>, <h1>, <time>, and the body
+    3. Add a link to it from blog/index.html in reverse chronological order
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POST TITLE — Elio Govea</title>
+  <meta name="description" content="POST DESCRIPTION" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/blog/">Notes</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+
+    <article class="post">
+      <header>
+        <time datetime="YYYY-MM-DD">Month DD, YYYY</time>
+        <h1>POST TITLE</h1>
+      </header>
+
+      <p>First paragraph goes here.</p>
+
+      <p>More paragraphs, lists, code blocks, etc.</p>
+    </article>
+
+    <footer class="footer">
+      <span>© 2026 Elio Govea</span>
+      <span><a href="/blog/">← All notes</a></span>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

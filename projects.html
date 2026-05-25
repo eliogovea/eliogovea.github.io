@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Elio Govea</title>
+  <meta name="description" content="Open-source projects by Elio Govea — C++ tooling, networking libraries, algorithm visualizations." />
+  <link rel="canonical" href="https://eliogovea.github.io/projects.html" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects.html" aria-current="page">Projects</a></li>
+        <li><a href="/blog/">Notes</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+
+    <header class="identity">
+      <h1>Projects</h1>
+      <p class="role">Open-source work and experiments.</p>
+    </header>
+
+    <section aria-label="Project list">
+      <div class="projects-grid">
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/dev-env-cpp">C++ project template</a></h3>
+          <p class="tagline">Reusable scaffold for cross-platform C++ work.</p>
+          <p>
+            Docker environment bundling common C++ tooling, CMake presets covering several build
+            configurations, and CI pipelines that report code coverage and generate documentation.
+            Designed to remove the start-up cost of new C++ projects.
+          </p>
+          <ul class="project-tags">
+            <li>C++</li><li>CMake</li><li>Docker</li><li>CI</li><li>Code coverage</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/dns">DNS library</a></h3>
+          <p class="tagline">Parsing and generating DNS messages from scratch.</p>
+          <p>
+            C++ library that parses and emits DNS messages, including the on-wire compression
+            scheme. Ships with example resolvers that demonstrate end-to-end queries over UDP and TCP.
+          </p>
+          <ul class="project-tags">
+            <li>C++</li><li>Networking</li><li>DNS</li><li>UDP/TCP</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/suffix-automaton-vis">Suffix automaton visualization</a></h3>
+          <p class="tagline">Interactive walk-through of a classic string algorithm.</p>
+          <p>
+            TypeScript and D3 tool that animates each step of building a suffix automaton — useful
+            both as a teaching aid and as a sanity check while implementing the algorithm.
+          </p>
+          <ul class="project-tags">
+            <li>TypeScript</li><li>D3</li><li>Algorithms</li><li>Visualization</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/compile-time-cpp">Template metaprogramming examples</a></h3>
+          <p class="tagline">Types and constants computed at compile time.</p>
+          <p>
+            Worked examples that build up and transform types and constant values using C++ template
+            metaprogramming. Each example focuses on a single idea — a small reference for myself
+            and anyone reading along.
+          </p>
+          <ul class="project-tags">
+            <li>C++</li><li>Templates</li><li>constexpr</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 Elio Govea</span>
+      <span><a href="https://github.com/eliogovea">More on GitHub →</a></span>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

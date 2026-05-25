@@ -1,0 +1,297 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage[scale=0.915]{geometry}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\name{Elio}{Govea}
+\newcommand*{\customcventry}[7][.13em]{
+\begin{tabular}{@{}l}
+{\bfseries #4} \
+{\itshape #3}
+\end{tabular}
+\hfill
+\begin{tabular}{l@{}}
+{\bfseries #5} \
+{\itshape #2}
+\end{tabular}
+\ifx&#7&%
+\else{\
+\begin{minipage}{\maincolumnwidth}%
+\small#7%
+\end{minipage}}\fi%
+\par\addvspace{#1}}
+\begin{document}
+\makecvtitle
+\vspace*{-16mm}
+\begin{center}\textbf{Software Developer}\end{center}
+\begin{center}
+\begin{tabular}{ c c c }
+\faMobile \enspace eliogovea1993@gmail.com \enspace & \faHome\enspace Helsinki, Finland \\
+\faLinkedin\enspace \color{blue} \href{https://www.linkedin.com/in/elio-alejandro-govea-aguilar-557598172/}{elio-alejandro-govea-aguilar} \enspace &
+\faGithub\enspace \color{blue} \href{https://github.com/eliogovea}{eliogovea}
+\end{tabular}
+\end{center}
+
+\section{Profile}
+Software developer. Former {\color{blue}\href{https://icpc.global/ICPCID/PNF1J4PZOUVQ}{ICPC}} World Finalist
+
+\section{Experience}
+
+\customcventry
+{05/2023 ‐ present}
+{{\color{blue}\href{https://www.f-secure.com/}{F-Secure}}}
+{Senior Developer}
+{Helsinki, Finland}
+{}
+{}
+
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    \item Designed solutions to reduce Content Delivery Network (CDN) costs by \emph{80\%} with minimal impact on end-users
+        \begin{itemize}
+            \item Analyzed CDN usage and identified key optimization areas
+            \item Designed a custom caching strategy to significantly decrease the volume of data transferred via CDN
+            \item Ensured that changes were backend-focused to avoid client-side updates and lengthy deployment negotiations
+        \end{itemize}
+\end{itemize}
+
+\customcventry
+{12/2021 ‐ 04/2023}
+{{\color{blue}\href{https://www.f-secure.com/}{F-Secure}}}
+{Developer}
+{Helsinki, Finland}
+{}
+{}
+
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    \item Built an SDK providing security features for home routers
+        \begin{itemize}
+            \item Developed most features using C++
+            % \item Used shell scripting for minor control scripts and integration to Linux environments
+            \item Supported multiple architectures
+                \begin{itemize}
+                    \item x86 | ARM | MIPS
+                \end{itemize}
+            \item Supported filtering, parsing and generating traffic for multiple network protocols
+            \begin{itemize}
+                \item IPv4 | IPv6 | DHCP | UDP | TCP | DNS | HTTP | HTTPS
+            \end{itemize}
+            \item Used multiple Linux interfaces and utilities
+                \begin{itemize}
+                    \item netlink | netfilter | iptables | nfqueue | nflog | conntrack
+                \end{itemize}
+            \item Integrated functionalities to cloud services
+            \item Collaborated closely with cross-functional teams to gather requirements, iterate on designs, and address specific needs of diverse projects.
+        \end{itemize}
+    \item Developed applications that secure devices connected to home routers
+        \begin{itemize}
+            \item Implemented features to prevent clients from accessing malicious content on the internet
+            \item Integrated to existing back-end services
+        \end{itemize}
+    \item Developed parental-control features for home devices
+        \begin{itemize}
+            \item Implemented features to force clients to resolve safe versions of major browser engines
+            \item Integrated to existing back-end services
+        \end{itemize}
+    \item Designed and integrated features to collect traffic statistics
+        \begin{itemize}
+            \item Integrated to back-end services to detect traffic anomalies
+            \item Minimized effects on networking performance
+            \item Used multiple Linux interfaces: nfqueue | nflog | conntrack
+        \end{itemize}
+    \item Implemented features to recognize/fingerprint devices
+        \begin{itemize}
+            \item Implemented features to filter multi-cast traffic
+            \item Used several Linux interfaces: nflog | BPF
+            \item Minimized effects on networking performance
+            \item Integrated to multiple back-end services
+        \end{itemize}
+    \item Implemented recovery mechanisms for OS- and cloud-service-level errors
+    \item Developed SDK integration to reference platforms
+        \begin{itemize}
+            \item Simplified products demos
+            \item Simplified future integration
+        \end{itemize}
+    \item Designed and optimized the build system of multiple cross platform C/C++ applications
+        \begin{itemize}
+            \item Supported multiple toolchains
+            \item Supported multiple architectures
+            \item Provided fast and reproducible builds
+            \item Implemented with CMake and GNU Make
+        \end{itemize}
+    \item Designed and implemented continuous integration pipelines
+        \begin{itemize}
+            \item Enforced code quality
+                \begin{itemize}
+                    \item Code coverage | Static analysis | Dynamic analysis
+                \end{itemize}
+            \item Provided builds for multiple architectures
+                \begin{itemize}
+                    \item x86 | ARM | MIPS
+                \end{itemize}
+            \item Provided builds for reference platforms
+            \item Implemented using Jenkins and AWS
+        \end{itemize}
+    
+    % \item DNS resolver to enforce security features
+    %     \begin{itemize}
+    %         \item DNS over UDP | DNS over TCP | DNS records | handle DNS messages (compression) | security | parental control | integrate to cloud services | RFCs... | fixed multi-thread issues on applications running on embedded Linux platforms | adopt the usage of new libraries
+    %     \end{itemize}
+    
+    \item Designed and implemented testing tools
+        \begin{itemize}
+            \item Python | Robot Framework
+        \end{itemize}
+    % \item Notes
+    %     \begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    %         \item C | C++ | Python | Project structure
+    %         \item ARM | MIPS
+    %         \item Linux
+    %             \begin{itemize}
+    %                 \item sh | socket | netlink | netfilter | conntrack | nfqueue | nflog | iptables
+    %                 \item OpenWrt | reference platforms | easy deployment | simpler demo | packages (.ipk) | firmware 
+    %                 \item buildroot | GCC | cross compile toolchains
+    %             \end{itemize}
+    %         \item Netowrking
+    %             \begin{itemize}
+    %                 \item IPv4 | IPv6 | UDP | TCP | DNS | HTTP | HTTPS
+    %             \end{itemize}
+    %         \item clients for cloud services (registration) | localization
+    %     \end{itemize}
+\end{itemize}
+
+\customcventry{09/2020 ‐ 11/2021}
+{{\color{blue}\href{https://www.f-secure.com/}{F-Secure}}}
+{Software Developer}
+{Poznań, Poland}
+{}
+{}
+
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    \item Contributed to a core C++ SDK providing security features for home routers
+    \item Optimized a notifications system for security events
+    \item Developed embedded Linux clients to consume cloud services
+    \item Added endpoints to existing REST APIs
+    \item Improved internal C++ interfaces and data structures
+    \item Fixed bugs on existing products
+    \item Added new interfaces using Unix domain socket for communication with different client/services
+    % \item Notes
+    %     \begin{itemize}
+    %         \item signals | reduce parsing | unit tests | traffic statistics | UDP traffic filtering | TCP traffic filtering | threads sychronization | utilities to monitor services running on different threads | implemented interfaces using unix domain sockets to communicate with different client/services | implemented C++ utilities to handle multiple OS operations | add testing features
+    %     \end{itemize}
+\end{itemize}
+
+
+\customcventry{01/2018 ‐ 08/2020}{\color{blue}\href{https://www.upr.edu.cu/}
+{Universidad de Pinar del Rio}}
+{Software Engineer}
+{Pinar del Rio, Cuba}
+{}
+{}
+
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    \item Designed and implemented applications to collect and visualize vibration signals using C++ and Qt
+        \begin{itemize}
+            \item Real-time signal processing
+            \item Technologies used include: C++ | IMU | Arduino | Serial communication | Qt
+        \end{itemize}
+    \item Designed and implemented applications to collect and visualize data from sensors for objects position tracking
+        \begin{itemize}
+            \item Technologies used include: C++ | IMU | Arduino | Serial communication | Linux | OpenGL
+        \end{itemize}
+    \item Assisted in teaching programming courses
+        \begin{itemize}
+            \item Prepared lectures on C++, Python, Arduino, Linux, Raspberry Pi
+            \item Conducted lab sessions and provided assistance to students with programming projects 
+            \item Designed and graded assignments
+        \end{itemize}
+    \item ICPC Judge for the Caribbean region
+        \begin{itemize}
+            \item Evaluated and proposed challenging programming problems and solution for the ICPC Caribbean Finals
+            % \item Collaborated with fellow judges to maintain high competition standards and ensure a fair and engaging experience
+        \end{itemize}
+    \item ICPC coach
+        \begin{itemize}
+            \item Coached a team to the ICPC Latin American Finals
+        \end{itemize}
+\end{itemize}
+
+\customcventry{09/2017 ‐ 12/2017}{\color{blue}\href{https://www.upr.edu.cu/}{Universidad de Pinar del Rio}}
+{DevOps Engineer}
+{Pinar del Rio, Cuba}
+{}
+{}
+
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    \item Setup up multiple servers
+\end{itemize}
+
+\section{Education}
+\customcventry{09/2012-07/2017}{\color{blue}\href{https://www.upr.edu.cu/}{UPR}}
+{B.Sc Telecommunications and Electronics Engineering}
+{Pinar del Rio, Cuba}
+{}
+{}
+{}
+
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+    \item GPA \emph{4.95/5.00}
+    \item ICPC world finalist
+\end{itemize}
+
+\section{Achievements}
+
+{\begin{itemize}[label=\textbullet]
+\item {\textbf{Honourable Mention} 2018 ACM ICPC World Finals}
+\item {\textbf{2nd Place (Silver Medal)} 2016 ACM ICPC Latin 
+American Finals}
+\item {\textbf{4th Place} 2015 ACM ICPC Latin 
+American Finals}
+\item {\textbf{Top 1000} 2019 Google Code Jam}
+\end{itemize}}
+
+\section{Projects}
+
+\begin{itemize}[label=\textbullet]
+    \item \href{https://github.com/eliogovea/dev-env-cpp}{\textbf{C++ project template}}
+        \begin{itemize}
+            \item Docker environment with common tools
+            \item CMake presets for multiple configurations
+            \item CI pipelines for reporting code coverage and generating documentation
+            % \item Headers only library example
+        \end{itemize}
+    \item \href{https://github.com/eliogovea/dns}{\textbf{DNS library}}
+        \begin{itemize}
+            \item Parse and generate DNS messages
+            \item Provide examples of DNS resolution
+        \end{itemize}
+    \item \href{https://github.com/eliogovea/suffix-automaton-vis}{\textbf{Suffix automaton visualization}}
+        \begin{itemize}
+            \item Interactive visualization tool using TypeScript and D3 to illustrate the algorithm to build a suffix automaton
+        \end{itemize}
+    \item \href{https://github.com/eliogovea/compile-time-cpp}{\textbf{Template metaprogramming examples}}
+        \begin{itemize}
+            \item C++ examples to create and modify types and constants at compile time
+        \end{itemize}
+\end{itemize}
+
+\section{Skills}
+
+{\begin{itemize}[label=\textbullet]
+\item C | C++ | Python | Bash | CMake | GNU Make | Linux | Buildroot | OpenWrt | Git | Docker | LXC | Algorithms | Data Structures | Networking | IP | DHCP | UDP | TCP | DNS | HTTP | TLS | QUIC
+\end{itemize}}
+
+\section{Languages}
+
+\begin{multicols}{2}
+    \begin{itemize}[label=\textbullet]
+    \item \textbf{Spanish} [Native]
+    \item {\textbf{English} [Full Professional Proficiency]}
+    \end{itemize}
+\end{multicols}
+\end{document}

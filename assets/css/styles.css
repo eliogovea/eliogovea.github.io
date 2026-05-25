@@ -1,0 +1,378 @@
+/* =========================================================================
+   Design tokens
+   ========================================================================= */
+
+:root {
+  --font-serif: "Source Serif 4", "Source Serif Pro", ui-serif, Charter,
+    Cambria, Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+
+  --ink: #1a1a1a;
+  --paper: #fafaf7;
+  --muted: #666;
+  --rule: #e5e5e0;
+  --accent: #1f4d7a;
+  --accent-soft: rgba(31, 77, 122, 0.08);
+
+  --measure: 42rem;
+  --gap-section: 2.75rem;
+  --gap-block: 1.25rem;
+  --radius: 4px;
+
+  color-scheme: light dark;
+}
+
+[data-theme="dark"] {
+  --ink: #e8e6e0;
+  --paper: #141414;
+  --muted: #999;
+  --rule: #2a2a2a;
+  --accent: #7fb3e0;
+  --accent-soft: rgba(127, 179, 224, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e8e6e0;
+    --paper: #141414;
+    --muted: #999;
+    --rule: #2a2a2a;
+    --accent: #7fb3e0;
+    --accent-soft: rgba(127, 179, 224, 0.12);
+  }
+}
+
+/* =========================================================================
+   Reset & base
+   ========================================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.35rem; margin-top: var(--gap-section); }
+h3 { font-size: 1.05rem; font-weight: 600; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+a:hover { border-bottom-color: currentColor; }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+ul { padding-left: 1.1rem; margin: 0 0 1rem; }
+li { margin-bottom: 0.35rem; }
+li > ul { margin-top: 0.35rem; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--gap-section) 0;
+}
+
+/* =========================================================================
+   Layout
+   ========================================================================= */
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+@media (min-width: 640px) {
+  .page { padding: 4rem 2rem 6rem; }
+}
+
+/* =========================================================================
+   Navigation
+   ========================================================================= */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-weight: 500;
+}
+.nav-links a[aria-current="page"] { color: var(--ink); }
+.nav-links a:hover { color: var(--ink); }
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--muted); }
+
+/* =========================================================================
+   Header / identity
+   ========================================================================= */
+
+.identity { margin-bottom: var(--gap-section); }
+
+.identity h1 { margin-bottom: 0.15rem; }
+
+.identity .role {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.contact a { color: var(--muted); }
+.contact a:hover { color: var(--accent); }
+
+/* =========================================================================
+   Sections
+   ========================================================================= */
+
+section { margin-top: var(--gap-section); }
+
+section h2 {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+/* =========================================================================
+   Experience entries
+   ========================================================================= */
+
+.entry { margin-bottom: var(--gap-block); }
+.entry + .entry { margin-top: 1.75rem; }
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.entry-head h3 { margin: 0; }
+.entry-head .meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-sub {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 0 0 0.6rem;
+}
+
+.entry ul { margin-top: 0.4rem; }
+
+/* =========================================================================
+   Skills pills
+   ========================================================================= */
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pills li {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-size: 0.83rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin: 0;
+}
+
+.skill-group { margin-bottom: 1rem; }
+.skill-group .label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================================
+   Project cards
+   ========================================================================= */
+
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease;
+}
+.project:hover { border-color: var(--muted); }
+
+.project h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.project .tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.6rem;
+}
+.project p { font-size: 0.95rem; margin: 0 0 0.7rem; }
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.78rem;
+}
+.project-tags li {
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+}
+
+.see-all {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* =========================================================================
+   Footer & CV download
+   ========================================================================= */
+
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+.cv-download:hover {
+  background: var(--accent);
+  color: var(--paper);
+  border-bottom-color: var(--accent);
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* =========================================================================
+   Blog
+   ========================================================================= */
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.post-list time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 0.2rem;
+}
+
+.empty-state {
+  padding: 2.5rem 0;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* =========================================================================
+   Article (blog post)
+   ========================================================================= */
+
+.post header { margin-bottom: 2rem; }
+.post header time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+.post h1 { font-size: 1.9rem; }
