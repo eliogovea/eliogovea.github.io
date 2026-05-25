@@ -89,8 +89,8 @@
         <a href="https://www.vaisala.com/en/products/systems/avimet">AviMet</a> —
         an aviation weather information system used by airports and air-traffic services.
         Before that, four-plus years at <a href="https://www.f-secure.com/">F-Secure</a>
-        in Helsinki and Poznań, working on C++ SDKs for home-router security across
-        x86, ARM, and MIPS, and later cutting Content Delivery Network costs by 80%.
+        in Helsinki and Poznań, building the Sense SDK (C++) for home-router security
+        across x86, ARM, and MIPS, then working on CDN cost optimization for it.
       </p>
       <p>
         Trained in competitive programming at the
@@ -132,7 +132,13 @@
         <ul>
           <li>
             Contributing to <a href="https://www.vaisala.com/en/products/systems/avimet">AviMet</a>,
-            an aviation weather information system used by airports and air-traffic services.
+            an aviation weather information system used at airports worldwide — providing
+            real-time wind, visibility, lightning, wind shear, and runway-surface data to
+            air-traffic control and pilots.
+          </li>
+          <li>
+            Working across a wide variety of issues, implementing new features, and
+            adding support for new platforms.
           </li>
         </ul>
       </article>
@@ -145,7 +151,7 @@
         <p class="entry-sub">Helsinki, Finland</p>
         <ul>
           <li>
-            Designed solutions that cut Content Delivery Network (CDN) costs by <strong>80%</strong> with minimal impact on end-users.
+            Designed CDN cost-reduction strategy for the Sense SDK — cut delivery costs by <strong>80%</strong> with minimal impact on end-users.
             <ul>
               <li>Analyzed CDN usage and identified key optimization areas.</li>
               <li>Designed a custom caching strategy that significantly decreased the volume of data transferred via CDN.</li>
@@ -163,72 +169,28 @@
         <p class="entry-sub">Helsinki, Finland</p>
         <ul>
           <li>
-            Built an SDK providing security features for home routers.
-            <ul>
-              <li>Developed most features in C++.</li>
-              <li>Supported multiple architectures: x86, ARM, MIPS.</li>
-              <li>Filtered, parsed, and generated traffic for IPv4, IPv6, DHCP, UDP, TCP, DNS, HTTP, and HTTPS.</li>
-              <li>Worked with Linux networking interfaces: netlink, netfilter, iptables, nfqueue, nflog, conntrack.</li>
-              <li>Integrated features into cloud services.</li>
-              <li>Collaborated closely with cross-functional teams to gather requirements, iterate on designs, and address diverse project needs.</li>
-            </ul>
+            <strong>Built Sense SDK</strong> — F-Secure's C++ SDK for home-router
+            security: URL filtering and parental controls (forcing safe-mode browser
+            engines), traffic-statistics collection, device recognition and
+            fingerprinting; across IPv4/IPv6, DHCP, TCP/UDP, DNS, HTTP/HTTPS using
+            Linux networking interfaces (netlink, netfilter, iptables, nfqueue, nflog,
+            conntrack, BPF) and integrated with cloud back-end services.
           </li>
           <li>
-            Developed applications that secure devices connected to home routers.
-            <ul>
-              <li>Implemented features to prevent clients from accessing malicious content on the internet.</li>
-              <li>Integrated with existing back-end services.</li>
-            </ul>
+            <strong>Shipped on x86, ARM, and MIPS targets</strong> — designed and
+            optimized the cross-platform build system (CMake + GNU Make) for fast,
+            reproducible builds across toolchains, plus SDK integrations for reference
+            platforms to streamline demos and future integrations.
           </li>
           <li>
-            Developed parental-control features for home devices.
-            <ul>
-              <li>Implemented features to force clients to resolve safe versions of major browser engines.</li>
-              <li>Integrated with existing back-end services.</li>
-            </ul>
+            <strong>Designed Jenkins / AWS CI pipelines</strong> — enforced code quality
+            through coverage, static, and dynamic analysis; produced builds for multiple
+            architectures and reference platforms.
           </li>
           <li>
-            Designed and integrated features to collect traffic statistics.
-            <ul>
-              <li>Integrated with back-end services to detect traffic anomalies.</li>
-              <li>Minimized impact on networking performance.</li>
-              <li>Used Linux interfaces: nfqueue, nflog, conntrack.</li>
-            </ul>
+            <strong>Built testing infrastructure in Python and Robot Framework</strong>;
+            implemented recovery mechanisms for OS- and cloud-service-level errors.
           </li>
-          <li>
-            Implemented device recognition and fingerprinting features.
-            <ul>
-              <li>Filtered multicast traffic.</li>
-              <li>Used Linux interfaces: nflog, BPF.</li>
-              <li>Minimized impact on networking performance.</li>
-              <li>Integrated with multiple back-end services.</li>
-            </ul>
-          </li>
-          <li>Implemented recovery mechanisms for OS- and cloud-service-level errors.</li>
-          <li>
-            Developed SDK integrations for reference platforms.
-            <ul>
-              <li>Simplified product demos.</li>
-              <li>Streamlined future integrations.</li>
-            </ul>
-          </li>
-          <li>
-            Designed and optimized the build system for multiple cross-platform C/C++ applications.
-            <ul>
-              <li>Supported multiple toolchains and architectures.</li>
-              <li>Delivered fast and reproducible builds.</li>
-              <li>Implemented with CMake and GNU Make.</li>
-            </ul>
-          </li>
-          <li>
-            Designed and implemented continuous-integration pipelines.
-            <ul>
-              <li>Enforced code quality through code coverage, static analysis, and dynamic analysis.</li>
-              <li>Provided builds for multiple architectures (x86, ARM, MIPS) and reference platforms.</li>
-              <li>Implemented using Jenkins and AWS.</li>
-            </ul>
-          </li>
-          <li>Designed and implemented testing tools in Python and Robot Framework.</li>
         </ul>
       </article>
 
@@ -239,7 +201,7 @@
         </div>
         <p class="entry-sub">Poznań, Poland</p>
         <ul>
-          <li>Contributed to a core C++ SDK providing security features for home routers.</li>
+          <li>Contributed to the core C++ of the Sense SDK.</li>
           <li>Optimized a notifications system for security events.</li>
           <li>Developed embedded Linux clients to consume cloud services.</li>
           <li>Added endpoints to existing REST APIs.</li>
@@ -292,16 +254,6 @@
         </ul>
       </article>
 
-      <article class="entry">
-        <div class="entry-head">
-          <h3><a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> · DevOps Engineer</h3>
-          <span class="meta"><time datetime="2017-09">09/2017</time> – <time datetime="2017-12">12/2017</time></span>
-        </div>
-        <p class="entry-sub">Pinar del Río, Cuba</p>
-        <ul>
-          <li>Set up and maintained multiple servers.</li>
-        </ul>
-      </article>
     </section>
 
     <section id="projects" aria-labelledby="projects-h">
@@ -343,6 +295,9 @@
           <h3><a href="https://github.com/eliogovea/suffix-automaton-vis">Suffix automaton visualization</a></h3>
           <p class="tagline">Interactive walk-through of a classic string algorithm.</p>
           <p>TypeScript and D3 tool that illustrates each step of building a suffix automaton.</p>
+          <p class="project-links">
+            <a href="https://eliogovea.github.io/suffix-automaton-vis/">Live demo ↗</a>
+          </p>
           <ul class="project-tags">
             <li>TypeScript</li><li>D3</li><li>Algorithms</li>
           </ul>
@@ -408,13 +363,19 @@
       <div class="skill-group">
         <span class="label">Languages</span>
         <ul class="pills">
-          <li>C</li><li>C++</li><li>Python</li><li>Bash</li><li>CMake</li><li>GNU Make</li>
+          <li>C</li><li>C++</li><li>Python</li><li>Bash</li>
         </ul>
       </div>
       <div class="skill-group">
-        <span class="label">Systems &amp; tooling</span>
+        <span class="label">Build &amp; tooling</span>
         <ul class="pills">
-          <li>Linux</li><li>Buildroot</li><li>OpenWrt</li><li>Git</li><li>Docker</li><li>LXC</li>
+          <li>CMake</li><li>GNU Make</li><li>Git</li><li>Docker</li><li>LXC</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Systems</span>
+        <ul class="pills">
+          <li>Linux</li><li>Buildroot</li><li>OpenWrt</li>
         </ul>
       </div>
       <div class="skill-group">
@@ -439,15 +400,12 @@
       </ul>
     </section>
 
-    <section id="cv-download" aria-labelledby="cv-download-h">
-      <h2 id="cv-download-h">Curriculum Vitae</h2>
-      <p>A printable PDF version is available for download.</p>
-      <a class="cv-download" href="assets/cv.pdf" download>Download CV (PDF)</a>
-    </section>
-
     <footer class="footer">
       <span>© <span id="year">2026</span> Elio Govea</span>
-      <span><a href="https://github.com/eliogovea/eliogovea.github.io">Source on GitHub</a></span>
+      <span>
+        <a href="assets/cv.pdf" download>Download CV (PDF)</a> ·
+        <a href="https://github.com/eliogovea/eliogovea.github.io">Source</a>
+      </span>
     </footer>
   </main>
 

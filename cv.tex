@@ -52,7 +52,8 @@ Software developer. Currently building aviation weather systems at {\color{blue}
 {}
 
 \begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-    \item Contributing to {\color{blue}\href{https://www.vaisala.com/en/products/systems/avimet}{AviMet}}, an aviation weather information system used by airports and air-traffic services
+    \item Contributing to {\color{blue}\href{https://www.vaisala.com/en/products/systems/avimet}{AviMet}}, an aviation weather information system used at airports worldwide --- providing real-time wind, visibility, lightning, wind shear, and runway-surface data to air-traffic control and pilots
+    \item Working across a wide variety of issues, implementing new features, and adding support for new platforms
 \end{itemize}
 
 \customcventry
@@ -64,7 +65,7 @@ Software developer. Currently building aviation weather systems at {\color{blue}
 {}
 
 \begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-    \item Designed solutions to reduce Content Delivery Network (CDN) costs by \emph{80\%} with minimal impact on end-users
+    \item Designed CDN cost-reduction strategy for the Sense SDK --- cut delivery costs by \emph{80\%} with minimal impact on end-users
         \begin{itemize}
             \item Analyzed CDN usage and identified key optimization areas
             \item Designed a custom caching strategy to significantly decrease the volume of data transferred via CDN
@@ -81,84 +82,10 @@ Software developer. Currently building aviation weather systems at {\color{blue}
 {}
 
 \begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-    \item Built an SDK providing security features for home routers
-        \begin{itemize}
-            \item Developed most features using C++
-            % \item Used shell scripting for minor control scripts and integration to Linux environments
-            \item Supported multiple architectures
-                \begin{itemize}
-                    \item x86 | ARM | MIPS
-                \end{itemize}
-            \item Supported filtering, parsing and generating traffic for multiple network protocols
-            \begin{itemize}
-                \item IPv4 | IPv6 | DHCP | UDP | TCP | DNS | HTTP | HTTPS
-            \end{itemize}
-            \item Used multiple Linux interfaces and utilities
-                \begin{itemize}
-                    \item netlink | netfilter | iptables | nfqueue | nflog | conntrack
-                \end{itemize}
-            \item Integrated functionalities to cloud services
-            \item Collaborated closely with cross-functional teams to gather requirements, iterate on designs, and address specific needs of diverse projects.
-        \end{itemize}
-    \item Developed applications that secure devices connected to home routers
-        \begin{itemize}
-            \item Implemented features to prevent clients from accessing malicious content on the internet
-            \item Integrated to existing back-end services
-        \end{itemize}
-    \item Developed parental-control features for home devices
-        \begin{itemize}
-            \item Implemented features to force clients to resolve safe versions of major browser engines
-            \item Integrated to existing back-end services
-        \end{itemize}
-    \item Designed and integrated features to collect traffic statistics
-        \begin{itemize}
-            \item Integrated to back-end services to detect traffic anomalies
-            \item Minimized effects on networking performance
-            \item Used multiple Linux interfaces: nfqueue | nflog | conntrack
-        \end{itemize}
-    \item Implemented features to recognize/fingerprint devices
-        \begin{itemize}
-            \item Implemented features to filter multi-cast traffic
-            \item Used several Linux interfaces: nflog | BPF
-            \item Minimized effects on networking performance
-            \item Integrated to multiple back-end services
-        \end{itemize}
-    \item Implemented recovery mechanisms for OS- and cloud-service-level errors
-    \item Developed SDK integration to reference platforms
-        \begin{itemize}
-            \item Simplified products demos
-            \item Simplified future integration
-        \end{itemize}
-    \item Designed and optimized the build system of multiple cross platform C/C++ applications
-        \begin{itemize}
-            \item Supported multiple toolchains
-            \item Supported multiple architectures
-            \item Provided fast and reproducible builds
-            \item Implemented with CMake and GNU Make
-        \end{itemize}
-    \item Designed and implemented continuous integration pipelines
-        \begin{itemize}
-            \item Enforced code quality
-                \begin{itemize}
-                    \item Code coverage | Static analysis | Dynamic analysis
-                \end{itemize}
-            \item Provided builds for multiple architectures
-                \begin{itemize}
-                    \item x86 | ARM | MIPS
-                \end{itemize}
-            \item Provided builds for reference platforms
-            \item Implemented using Jenkins and AWS
-        \end{itemize}
-    
-    % \item DNS resolver to enforce security features
-    %     \begin{itemize}
-    %         \item DNS over UDP | DNS over TCP | DNS records | handle DNS messages (compression) | security | parental control | integrate to cloud services | RFCs... | fixed multi-thread issues on applications running on embedded Linux platforms | adopt the usage of new libraries
-    %     \end{itemize}
-    
-    \item Designed and implemented testing tools
-        \begin{itemize}
-            \item Python | Robot Framework
-        \end{itemize}
+    \item \textbf{Built Sense SDK} --- F-Secure's C++ SDK for home-router security: URL filtering and parental controls (forcing safe-mode browser engines), traffic-statistics collection, device recognition and fingerprinting; across IPv4/IPv6, DHCP, TCP/UDP, DNS, HTTP/HTTPS using Linux networking interfaces (netlink, netfilter, iptables, nfqueue, nflog, conntrack, BPF) and integrated with cloud back-end services
+    \item \textbf{Shipped on x86, ARM, and MIPS targets} --- designed and optimized the cross-platform build system (CMake + GNU Make) for fast, reproducible builds across toolchains, plus SDK integrations for reference platforms to streamline demos and future integrations
+    \item \textbf{Designed Jenkins / AWS CI pipelines} --- enforced code quality through coverage, static, and dynamic analysis; produced builds for multiple architectures and reference platforms
+    \item \textbf{Built testing infrastructure in Python and Robot Framework}; implemented recovery mechanisms for OS- and cloud-service-level errors
     % \item Notes
     %     \begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
     %         \item C | C++ | Python | Project structure
@@ -185,7 +112,7 @@ Software developer. Currently building aviation weather systems at {\color{blue}
 {}
 
 \begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-    \item Contributed to a core C++ SDK providing security features for home routers
+    \item Contributed to the core C++ of the Sense SDK
     \item Optimized a notifications system for security events
     \item Developed embedded Linux clients to consume cloud services
     \item Added endpoints to existing REST APIs
@@ -233,16 +160,6 @@ Software developer. Currently building aviation weather systems at {\color{blue}
         \end{itemize}
 \end{itemize}
 
-\customcventry{09/2017 ‐ 12/2017}{\color{blue}\href{https://www.upr.edu.cu/}{Universidad de Pinar del Rio}}
-{DevOps Engineer}
-{Pinar del Rio, Cuba}
-{}
-{}
-
-\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-    \item Setup up multiple servers
-\end{itemize}
-
 \section{Education}
 \customcventry{09/2012-07/2017}{\color{blue}\href{https://www.upr.edu.cu/}{UPR}}
 {B.Sc Telecommunications and Electronics Engineering}
@@ -286,7 +203,7 @@ American Finals}
             \item Parse and generate DNS messages
             \item Provide examples of DNS resolution
         \end{itemize}
-    \item \href{https://github.com/eliogovea/suffix-automaton-vis}{\textbf{Suffix automaton visualization}}
+    \item \href{https://github.com/eliogovea/suffix-automaton-vis}{\textbf{Suffix automaton visualization}} (\href{https://eliogovea.github.io/suffix-automaton-vis/}{\color{blue}live demo})
         \begin{itemize}
             \item Interactive visualization tool using TypeScript and D3 to illustrate the algorithm to build a suffix automaton
         \end{itemize}
@@ -308,7 +225,11 @@ American Finals}
 \section{Skills}
 
 {\begin{itemize}[label=\textbullet]
-\item C | C++ | Python | Bash | CMake | GNU Make | Linux | Buildroot | OpenWrt | Git | Docker | LXC | Algorithms | Data Structures | Networking | IP | DHCP | UDP | TCP | DNS | HTTP | TLS | QUIC
+\item \textbf{Languages:} C | C++ | Python | Bash
+\item \textbf{Build \& tooling:} CMake | GNU Make | Git | Docker | LXC
+\item \textbf{Systems:} Linux | Buildroot | OpenWrt
+\item \textbf{Concepts:} Algorithms | Data Structures | Networking
+\item \textbf{Protocols:} IP | DHCP | UDP | TCP | DNS | HTTP | TLS | QUIC
 \end{itemize}}
 
 \section{Languages}

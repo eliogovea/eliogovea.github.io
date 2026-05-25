@@ -356,26 +356,8 @@ section h2 {
 }
 
 /* =========================================================================
-   Footer & CV download
+   Footer
    ========================================================================= */
-
-.cv-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 1rem;
-  border: 1px solid var(--accent);
-  border-radius: var(--radius);
-  color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-top: 0.5rem;
-}
-.cv-download:hover {
-  background: var(--accent);
-  color: var(--paper);
-  border-bottom-color: var(--accent);
-}
 
 .footer {
   margin-top: 4rem;
