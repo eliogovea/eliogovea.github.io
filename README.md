@@ -5,8 +5,7 @@ Personal site — resume, projects, notes. Hosted on GitHub Pages.
 ## Structure
 
 ```
-index.html              Resume / home
-projects.html           Projects showcase
+index.html              Resume / home (includes Projects section)
 blog/index.html         Notes (empty)
 assets/
   css/styles.css

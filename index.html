@@ -62,7 +62,7 @@
     <nav class="nav" aria-label="Primary">
       <ul class="nav-links">
         <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/#projects">Projects</a></li>
         <li><a href="/blog/">Notes</a></li>
       </ul>
       <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
@@ -308,6 +308,22 @@
       <h2 id="projects-h">Projects</h2>
       <div class="projects-grid">
         <article class="project">
+          <h3><a href="https://github.com/eliogovea/baseball-limits-2d">Baseball Limits 2D</a></h3>
+          <p class="tagline">The "limits" of baseball performance, two stats at a time.</p>
+          <p>
+            What does "best ever" look like when you compare two baseball stats at once?
+            In one dimension it's a ranking; in two it's a Pareto frontier — the players
+            no one strictly outperforms in both. Interactive viewer over 150 years of
+            MLB data.
+          </p>
+          <p class="project-links">
+            <a href="https://eliogovea.github.io/baseball-limits-2d/">Live demo ↗</a>
+          </p>
+          <ul class="project-tags">
+            <li>JavaScript</li><li>Python</li><li>Data viz</li><li>Pareto frontier</li><li>Baseball</li>
+          </ul>
+        </article>
+        <article class="project">
           <h3><a href="https://github.com/eliogovea/dev-env-cpp">C++ project template</a></h3>
           <p class="tagline">Reusable scaffold for cross-platform C++ work.</p>
           <p>Docker environment with common tools, CMake presets for multiple configurations, and CI pipelines for code coverage and documentation.</p>
@@ -331,8 +347,35 @@
             <li>TypeScript</li><li>D3</li><li>Algorithms</li>
           </ul>
         </article>
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/compile-time-cpp">Template metaprogramming examples</a></h3>
+          <p class="tagline">Types and constants computed at compile time.</p>
+          <p>Worked C++ examples that build up and transform types and values at compile time. Each example focuses on a single idea.</p>
+          <ul class="project-tags">
+            <li>C++</li><li>Templates</li><li>constexpr</li>
+          </ul>
+        </article>
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/router-network-docker">Router-network Docker testbed</a></h3>
+          <p class="tagline">Client → router → server, all in containers.</p>
+          <p>Docker setup that simulates a small home network — clients behind a router-as-gateway talking to remote servers — for testing network applications end-to-end without real hardware.</p>
+          <ul class="project-tags">
+            <li>Docker</li><li>Networking</li><li>Linux</li>
+          </ul>
+        </article>
+        <article class="project">
+          <h3>Competitive programming archive</h3>
+          <p class="tagline">The algorithms I leaned on, and the problems I solved with them.</p>
+          <p>Two companion repositories. The first is my personal reference of algorithms and data structures — the kind of notebook ICPC teams build up over years. The second is the running set of solutions I wrote against online-judge problems.</p>
+          <p class="project-links">
+            <a href="https://github.com/eliogovea/icpc-reference">Reference</a> ·
+            <a href="https://github.com/eliogovea/solutions_cp">Solutions</a>
+          </p>
+          <ul class="project-tags">
+            <li>C++</li><li>Algorithms</li><li>Data structures</li><li>ICPC</li>
+          </ul>
+        </article>
       </div>
-      <a class="see-all" href="/projects.html">See all projects →</a>
     </section>
 
     <section id="education" aria-labelledby="education-h">
