@@ -27,14 +27,41 @@ Open <http://localhost:8000>.
 
 ## Rebuild the CV PDF
 
-The site links to `assets/cv.pdf`. After editing `cv.tex`, regenerate it with:
+The site links to `assets/cv.pdf`. After editing `cv.tex`, rebuild it via the
+included Docker image — no local TeX install needed:
 
 ```sh
-pdflatex -output-directory=assets cv.tex
-rm assets/cv.aux assets/cv.log assets/cv.out 2>/dev/null
+./build-cv.sh
 ```
 
-Requires a TeX distribution with the `moderncv` package (e.g. MacTeX, TeX Live).
+The script:
+
+1. Builds the `cv-builder` image on first run (Debian + the TeX Live packages
+   that `cv.tex` needs — `moderncv`, `enumitem`, `import`, FontAwesome glyphs,
+   etc.). ~1.5 GB, takes a few minutes once.
+2. Mounts the repo into the container and runs `pdflatex` against `cv.tex`.
+3. Writes `assets/cv.pdf` and cleans up the `.aux`, `.log`, `.out` intermediates.
+
+Subsequent runs reuse the cached image and finish in a few seconds.
+
+### Without the wrapper script
+
+Equivalent to what `build-cv.sh` does:
+
+```sh
+docker build -t cv-builder .
+docker run --rm --user "$(id -u):$(id -g)" -v "$PWD":/work cv-builder
+```
+
+### Using a local TeX install instead
+
+If you'd rather not use Docker, any TeX distribution with `moderncv` works
+(MacTeX on macOS, TeX Live on Linux):
+
+```sh
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=assets cv.tex
+rm assets/cv.{aux,log,out} 2>/dev/null
+```
 
 ## Optional: ship the design fonts
 
