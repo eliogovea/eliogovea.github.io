@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#1f4d7a"/>
+  <text x="32" y="46" font-family="Charter, 'Source Serif 4', Georgia, serif"
+        font-size="44" font-weight="600" fill="#fafaf7"
+        text-anchor="middle">E</text>
+</svg>
