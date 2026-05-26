@@ -1,22 +1,19 @@
 # eliogovea.github.io
 
-Personal site — resume, projects, notes. Hosted on GitHub Pages.
+Personal site — resume and projects. Hosted on GitHub Pages.
 
 ## Structure
 
 ```
-index.html              Resume / home (includes Projects section)
-blog/index.html         Notes (empty)
+index.html              Resume / home — self-contained (CSS, JS, favicons inlined)
 assets/
-  css/styles.css
-  js/main.js
-  cv.pdf                Compiled from cv.tex
-  favicon.svg, favicon-32.png, apple-touch-icon.png
-  og-image.png          1200x630 share card
-cv.tex                  Source of truth for the CV
+  cv.pdf                Generated from index.html by scripts/build-pdf.sh
+  og-image.png          1200x630 share card (kept external for OG crawlers)
+scripts/
+  build-pdf.sh          Render index.html → assets/cv.pdf via headless Chrome
 ```
 
-No build step. Push to `main`; GitHub Pages serves it.
+No build step for the live site. Push to `main`; GitHub Pages serves it.
 
 ## Local preview
 
@@ -26,13 +23,9 @@ python3 -m http.server 8000
 
 ## Rebuild the CV PDF
 
-After editing `cv.tex`:
-
 ```sh
-docker run --rm -v "$(pwd):/work" -w /work texlive/texlive \
-  pdflatex -interaction=nonstopmode -halt-on-error -output-directory=assets cv.tex
-# run twice to resolve cross-references
-docker run --rm -v "$(pwd):/work" -w /work texlive/texlive \
-  pdflatex -interaction=nonstopmode -halt-on-error -output-directory=assets cv.tex
-rm assets/cv.{aux,log,out}
+./scripts/build-pdf.sh
 ```
+
+Renders `index.html` to `assets/cv.pdf` via headless Chrome (auto-detects
+macOS Chrome, `google-chrome`, or `chromium`; override with `$CHROME`).
