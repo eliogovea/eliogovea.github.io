@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Render index.html → assets/cv.pdf via headless Chrome.
+# Render resume/index.html → assets/cv.pdf via headless Chrome.
 # Honors $CHROME; auto-detects common binaries otherwise.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SRC="$ROOT/index.html"
+SRC="$ROOT/resume/index.html"
 OUT="$ROOT/assets/cv.pdf"
 
 find_chrome() {
