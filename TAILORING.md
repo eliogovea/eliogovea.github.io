@@ -1,6 +1,6 @@
 # Tailoring the CV per application
 
-`resume/index.html` is the **base CV**: one document that reads well for any C++ systems
+`index.html` is the **base CV**: one document that reads well for any C++ systems
 role. For a specific application, swap the four things below, rebuild the PDF, and send it.
 Keep the base intact on `main` — tailor on a branch or in a scratch copy.
 
@@ -60,5 +60,6 @@ Widest reach, weakest signal — use only when the posting is genuinely generali
    ```sh
    gs -q -dNOPAUSE -dBATCH -sDEVICE=txtwrite -sOutputFile=- assets/cv.pdf
    ```
-4. **Keep `index.html` and `resume/index.html` in agreement** on any shared number
+4. **Keep `index.html` and `projects/index.html` in agreement** on any shared claim,
+   and check the CV's figures against what you can substantiate
    (currently: 170+ countries, 2,500+ systems, 200+ partners, 80% CDN).

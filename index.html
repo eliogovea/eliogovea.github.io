@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elio Govea — Senior Software Engineer</title>
-  <meta name="description" content="Elio Govea — Senior Software Engineer at Vaisala. C++, networking, embedded Linux. 2018 ICPC World Finalist. Projects and resume." />
+  <meta name="description" content="Elio Govea — Senior Software Engineer at Vaisala, working on AviMet. C++, networking, embedded Linux. 2018 ICPC World Finalist." />
   <meta name="author" content="Elio Govea" />
   <meta property="og:title" content="Elio Govea — Senior Software Engineer" />
   <meta property="og:description" content="Senior Software Engineer at Vaisala · Helsinki area · 2018 ICPC World Finalist" />
@@ -288,8 +288,8 @@
     .entry ul { margin-top: 0.4rem; }
 
     /* Stacked role rows within one company entry */
-    .role { margin-top: 0.95rem; }
-    .role:first-of-type { margin-top: 0.6rem; }
+    .role-row { margin-top: 0.95rem; }
+    .role-row:first-of-type { margin-top: 0.6rem; }
 
     .role-head {
       display: flex;
@@ -306,7 +306,7 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .role ul { margin-top: 0.35rem; margin-bottom: 0; }
+    .role-row ul { margin-top: 0.35rem; margin-bottom: 0; }
 
     /* =========================================================================
        Highlights
@@ -463,7 +463,7 @@
       }
       body {
         font-size: 10pt;
-        line-height: 1.42;
+        line-height: 1.38;
         background: #fff;
         color: #000;
       }
@@ -481,22 +481,31 @@
       h2 { font-size: 12pt; margin-top: 1.25rem; }
       h3 { font-size: 10.5pt; }
       h4 { font-size: 10pt; }
-      section { margin-top: 0.8rem; }
-      section h2 { margin-bottom: 0.65rem; padding-bottom: 0.25rem; }
+      section { margin-top: 0.6rem; }
+      section h2 { margin-bottom: 0.45rem; padding-bottom: 0.2rem; }
       .identity { margin-bottom: 1.1rem; }
-      .identity .tagline { font-size: 10.5pt; margin-top: 0.3rem; }
-      .contact { font-size: 9pt; margin-top: 0.45rem; }
-      .entry + .entry { margin-top: 0.7rem; }
-      .role { margin-top: 0.55rem; }
-      .role:first-of-type { margin-top: 0.4rem; }
-      .entry, .skill-group, .role {
+      /* 32em is a good reading measure on screen, but on paper it caps the
+         tagline at ~61% of the line and forces an extra wrap. */
+      .identity .tagline { font-size: 10.5pt; margin-top: 0.3rem; max-width: none; }
+      .contact { font-size: 9pt; margin-top: 0.3rem; }
+      .entry + .entry { margin-top: 0.5rem; }
+      .role-row { margin-top: 0.55rem; }
+      .role-row:first-of-type { margin-top: 0.4rem; }
+      .entry, .skill-group {
         page-break-inside: avoid;
         break-inside: avoid;
       }
-      /* A multi-role company block is too tall to keep whole; break between roles. */
-      .entry-multi {
+      /* A multi-role company block, and a long role within it, are both too tall
+         to keep whole: forcing that wastes up to 1.5in at a page boundary. Let
+         them break between bullets instead — the heading rules below keep a role
+         title attached to its first bullet, and a bullet never splits itself. */
+      .entry-multi, .role-row {
         page-break-inside: auto;
         break-inside: auto;
+      }
+      li {
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
       h2, h3, h4 {
         page-break-after: avoid;
@@ -515,13 +524,98 @@
         border-bottom: none;
       }
       .footer {
-        margin-top: 1.5rem;
-        padding-top: 0.6rem;
+        margin-top: 0.5rem;
+        padding-top: 0.35rem;
         font-size: 8.5pt;
         border-top: 1px solid #cccccc;
       }
+
+      /* Tighten the screen-only spacing that does not carry over to paper. */
+      p { margin-bottom: 0.45rem; }
+      ul { margin-bottom: 0.45rem; }
+      li { margin-bottom: 0.08rem; }
+      li > ul { margin-top: 0.12rem; }
+      h1, h2, h3, h4 { margin-bottom: 0.25em; }
+      .identity .role { margin-bottom: 0.2rem; }
+      .entry-sub { margin-bottom: 0.3rem; }
+      .entry { margin-bottom: 0; }
+      .entry ul { margin-top: 0.25rem; }
+      .role-row ul { margin-top: 0.2rem; }
+      .skill-group { margin-bottom: 0.4rem; }
+      .skill-group .label { margin-bottom: 0.25rem; }
+      .pills { gap: 0.25rem; }
+      .pills li { padding: 0.05rem 0.4rem; margin-bottom: 0.2rem; }
+      .projects-grid { gap: 0.5rem; }
+      .project { padding: 0.5rem 0.7rem; }
+      .project h3 { margin-bottom: 0.15rem; }
+      .project .tagline { margin-bottom: 0.25rem; }
+      .project p { margin-bottom: 0.3rem; }
+      .project-links { margin-bottom: 0.3rem; }
+      .see-all { margin-top: 0.15rem; text-align: right; display: block; }
+      #achievements em { font-size: 8.5pt; }
+
+      /* Achievements and projects are short, ragged lines that leave 35-55% of the
+         measure empty. Two columns fill the page width and reclaim vertical space. */
+      #achievements ul {
+        columns: 2;
+        column-gap: 1.4rem;
+        margin-bottom: 0;
+      }
+      #achievements li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 0.2rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.4rem;
+      }
+
+      /* Skills: label beside its values, and pills reflowed as plain text.
+         Also extracts more cleanly than list items in ATS parsers. */
+      .skill-group {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .skill-group .label {
+        flex: 0 0 6rem;
+        margin-bottom: 0;
+        font-size: 7.5pt;
+      }
+      .pills { display: block; font-size: 8.5pt; }
+      .pills li {
+        display: inline;
+        background: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 8.5pt;
+      }
+      .pills li::after { content: ", "; }
+      .pills li:last-child::after { content: ""; }
+
+      /* Projects: no card chrome, one line each. Tags are dropped — every one
+         of them already appears under Skills. */
+      .projects-grid { gap: 0.25rem; }
+      .project { border: 0; padding: 0; }
+      .project p:not([class]) { display: none; }
+      .project-tags { display: none; }
+      .project h3 {
+        display: inline;
+        font-size: 10pt;
+      }
+      .project h3::after { content: " — "; font-weight: 400; }
+      .project .tagline {
+        display: inline;
+        font-size: 9.5pt;
+      }
+      .project-links { display: inline; font-size: 9pt; }
+      .project-links::before { content: " "; }
+
       @page {
-        margin: 0.55in;
+        margin: 0.45in;
       }
     }
   </style>
@@ -536,9 +630,8 @@
   <main class="page">
     <nav class="nav" aria-label="Primary">
       <ul class="nav-links">
-        <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/resume/">Resume</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="/" aria-current="page">CV</a></li>
+        <li><a href="/projects/">Projects</a></li>
       </ul>
       <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
     </nav>
@@ -552,118 +645,273 @@
         <li><a href="mailto:eliogovea1993@gmail.com">eliogovea1993@gmail.com</a></li>
         <li><a href="https://github.com/eliogovea" rel="me">github.com/eliogovea</a></li>
         <li><a href="https://www.linkedin.com/in/elio-alejandro-govea-aguilar-557598172/" rel="me">LinkedIn</a></li>
+        <li>Spanish (native) · English (professional)</li>
       </ul>
     </header>
 
-    <section id="intro" aria-labelledby="intro-h">
-      <h2 id="intro-h">About</h2>
+    <section id="summary" aria-labelledby="summary-h">
+      <h2 id="summary-h">Summary</h2>
       <p>
-        I work at the seam of networking, embedded Linux, and cross-platform C++.
-        Right now that means <a href="https://www.vaisala.com/en/products/systems/avimet">AviMet</a>
-        at <a href="https://www.vaisala.com/en">Vaisala</a> — an aviation weather platform
-        deployed across 170+ countries, 2,500+ systems delivered. Before that, four and a
-        half years at
-        <a href="https://www.f-secure.com/">F-Secure</a> on the Sense SDK, C++ home-router
-        security embedded by 200+ service-provider partners and running on x86, ARM, and MIPS.
+        <strong>Eight years</strong> of production C++ across networking, embedded Linux and
+        cross-platform delivery. At <a href="https://www.vaisala.com/en">Vaisala</a>, extending
+        <a href="https://www.vaisala.com/en/products/systems/avimet">AviMet</a> — an aviation
+        weather platform running in 170+ countries — onto new Linux targets, and building the
+        simulation tooling its modernization is verified against. Before that, four and a half
+        years at <a href="https://www.f-secure.com/">F-Secure</a> on the Sense SDK: home-router
+        security embedded by 200+ service-provider partners and shipped across x86, ARM and
+        MIPS, where I traced a production cost problem to its root and cut
+        <strong>monthly CDN spend by 80%</strong>.
       </p>
-      <p>
-        I learned to program competitively at the
-        <a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> in Cuba — three ICPC
-        Latin American Finals, and the
-        <a href="https://icpc.global/ICPCID/PNF1J4PZOUVQ">2018 ICPC World Finals</a> in Beijing.
-        That habit still shows up in what I build for fun, below.
-      </p>
-      <p><a href="/resume/">Full resume →</a></p>
     </section>
 
-    <section id="highlights" aria-labelledby="highlights-h">
-      <h2 id="highlights-h">Highlights</h2>
-      <ul class="highlights">
-        <li>
-          <strong class="hl-num">200+</strong>
-          <span class="hl-label">service-provider partners shipping the Sense SDK I built</span>
-        </li>
-        <li>
-          <strong class="hl-num">2018</strong>
-          <span class="hl-label">ICPC World Finals · Honourable Mention</span>
-        </li>
-        <li>
-          <strong class="hl-num">80%</strong>
-          <span class="hl-label">reduction in monthly CDN spend for Sense SDK deployments</span>
-        </li>
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skill-group">
+        <span class="label">Languages</span>
+        <ul class="pills">
+          <li>C++ (11–20)</li><li>C</li><li>Python</li><li>Bash</li><li>PowerShell</li><li>TypeScript / JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Networking</span>
+        <ul class="pills">
+          <li>netlink</li><li>netfilter</li><li>iptables</li><li>nfqueue</li><li>nflog</li><li>conntrack</li><li>BPF</li><li>Unix domain sockets</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Protocols</span>
+        <ul class="pills">
+          <li>IPv4 / IPv6</li><li>TCP</li><li>UDP</li><li>DHCP</li><li>DNS</li><li>HTTP / HTTPS</li><li>TLS</li><li>QUIC</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Platforms</span>
+        <ul class="pills">
+          <li>Embedded Linux</li><li>Buildroot</li><li>OpenWrt</li><li>Alma Linux</li><li>x86 / ARM / MIPS</li><li>Windows</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Build &amp; CI</span>
+        <ul class="pills">
+          <li>CMake</li><li>GNU Make</li><li>Cross-compilation</li><li>Git</li><li>Docker</li><li>LXC</li><li>Jenkins</li><li>AWS CI</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Frameworks</span>
+        <ul class="pills">
+          <li>Qt</li><li>Robot Framework</li><li>OpenGL</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="label">Concepts</span>
+        <ul class="pills">
+          <li>Algorithms &amp; data structures</li><li>Performance optimization</li><li>Static &amp; dynamic analysis</li><li>Debugging &amp; profiling</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-h">
+      <h2 id="experience-h">Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.vaisala.com/en">Vaisala</a> · Senior Software Engineer</h3>
+          <span class="meta"><time datetime="2025-02">Feb 2025</time> – Present</span>
+        </div>
+        <p class="entry-sub">Vantaa, Finland · <a href="https://www.vaisala.com/en/products/systems/avimet">AviMet</a> aviation weather platform — deployed across 170+ countries, 2,500+ systems delivered</p>
+        <ul>
+          <li>
+            Made AviMet's behavior provable to the standard a regulated aviation domain
+            demands — one programmable reference driving both the legacy and modernized
+            systems into arbitrary states from simulated sensor data, with time-varying
+            weather scenarios and deterministic setup, so correctness can be verified
+            repeatably and equivalence testing becomes possible.
+          </li>
+          <li>
+            Replaced GUI-bound tooling with an interface developers, testers and AI-assisted
+            workflows can script — what previously meant working through an extensive
+            configuration checklist by hand now runs from defaults almost immediately,
+            turning scattered team knowledge into executable documentation.
+          </li>
+          <li>
+            Led AviMet's expansion onto <strong>Alma Linux</strong> — extending the C++/Qt/CMake
+            build matrix and toolchain to a second Linux distribution, and implementing Linux-side
+            license enforcement against Vaisala's existing licensing system.
+          </li>
+          <li>
+            Built tooling for a new cloud entitlements system, designed for reuse
+            across Vaisala products beyond AviMet.
+          </li>
+          <li>
+            Hardened a long-lived codebase as it moved onto new platforms — root-causing
+            memory leaks and corner-case crashes latent for years.
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry entry-multi">
+        <div class="entry-head">
+          <h3><a href="https://www.f-secure.com/">F-Secure</a></h3>
+          <span class="meta"><time datetime="2020-09">Sep 2020</time> – <time datetime="2025-02">Feb 2025</time></span>
+        </div>
+        <p class="entry-sub">Helsinki, Finland · Poznań, Poland · Sense SDK — C++ home-router security embedded by 200+ service-provider partners</p>
+
+        <div class="role-row">
+          <div class="role-head">
+            <h4>Senior Software Engineer</h4>
+            <span class="meta"><time datetime="2023-05">May 2023</time> – <time datetime="2025-02">Feb 2025</time></span>
+          </div>
+          <ul>
+            <li>
+              Cut <strong>monthly CDN spend by 80%</strong> with no user-visible impact.
+              Root-caused it to router-side behavior driving excessive traffic; a router update
+              would have taken months to reach deployed devices, so I shipped a backend-side
+              mitigation in days instead, then landed the router-side fix for future releases
+              to close the cause permanently.
+            </li>
+            <li>
+              Co-designed and implemented cloud-driven dynamic traffic-rule enforcement, letting
+              F-Secure push new security policy to deployed routers without firmware updates.
+            </li>
+          </ul>
+        </div>
+
+        <div class="role-row">
+          <div class="role-head">
+            <h4>Software Engineer</h4>
+            <span class="meta"><time datetime="2020-09">Sep 2020</time> – <time datetime="2023-04">Apr 2023</time></span>
+          </div>
+          <ul>
+            <li>
+              Built core Sense SDK functionality — URL filtering and parental controls (forcing
+              safe-mode browser engines), traffic-statistics collection, device recognition and
+              fingerprinting — across IPv4/IPv6, DHCP, TCP/UDP, DNS and HTTP/HTTPS, using Linux
+              networking interfaces (netlink, netfilter, iptables, nfqueue, nflog, conntrack, BPF)
+              against cloud back-end services.
+            </li>
+            <li>
+              Built the embedded Linux clients consuming those cloud services, the
+              Unix-domain-socket IPC between clients and services, and reworked the
+              security-event notification path.
+            </li>
+            <li>
+              Owned the cross-platform build system (CMake + GNU Make) for fast, reproducible
+              builds across x86, ARM and MIPS toolchains, plus SDK integrations for reference
+              platforms that shortened partner demos and onboarding.
+            </li>
+            <li>
+              Designed the Jenkins/AWS CI pipelines and the quality gates behind them — coverage,
+              static and dynamic analysis — producing builds for every supported architecture and
+              reference platform.
+            </li>
+            <li>
+              Built the test infrastructure in Python and Robot Framework, including recovery
+              paths for OS- and cloud-service-level failures.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> · Software Engineer</h3>
+          <span class="meta"><time datetime="2018-01">Jan 2018</time> – <time datetime="2020-08">Aug 2020</time></span>
+        </div>
+        <p class="entry-sub">Pinar del Río, Cuba</p>
+        <ul>
+          <li>
+            Built real-time C++/Qt applications for vibration-signal processing and IMU-based
+            object position tracking — embedded sensor input over serial (Arduino), Linux,
+            OpenGL visualization.
+          </li>
+          <li>
+            Served as ICPC judge for the Caribbean region and coached a team to the ICPC
+            Latin American Finals, alongside teaching C++, Python, Arduino, Linux and
+            Raspberry Pi.
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+    <section id="education" aria-labelledby="education-h">
+      <h2 id="education-h">Education</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://www.upr.edu.cu/">Universidad de Pinar del Río</a> · B.Sc. Telecommunications and Electronics Engineering</h3>
+          <span class="meta"><time datetime="2012-09">Sep 2012</time> – <time datetime="2017-07">Jul 2017</time></span>
+        </div>
+        <p class="entry-sub">Pinar del Río, Cuba · GPA 4.95 / 5.00 · ICPC World Finalist</p>
+      </article>
+    </section>
+
+    <section id="achievements" aria-labelledby="achievements-h">
+      <h2 id="achievements-h">Achievements</h2>
+      <ul>
+        <li><strong>Honorable Mention</strong> — 2018 <a href="https://icpc.global/ICPCID/PNF1J4PZOUVQ">ICPC World Finals</a>, Beijing <em>(140-team final, from ~50,000 regional competitors)</em></li>
+        <li><strong>2nd Place, Silver Medal</strong> — 2016 ICPC Latin American Finals</li>
+        <li><strong>4th Place</strong> — 2015 ICPC Latin American Finals</li>
+        <li><strong>Round 3, Top 1000</strong> — 2019 Google Code Jam <em>(of ~50,000 entrants — top ~2%)</em></li>
       </ul>
     </section>
 
     <section id="projects" aria-labelledby="projects-h">
-      <h2 id="projects-h">Projects</h2>
+      <h2 id="projects-h">Selected projects</h2>
       <div class="projects-grid">
         <article class="project">
           <h3><a href="https://github.com/eliogovea/dns">DNS library</a></h3>
           <p class="tagline">Wire format parsed and generated from scratch.</p>
-          <p>Parses and emits DNS messages against the wire format directly rather than through an existing library, with example resolvers covering common query types.</p>
+          <p>Parses and emits DNS messages against the wire format directly, with example resolvers for common query types.</p>
           <ul class="project-tags">
-            <li>C++</li><li>Networking</li><li>DNS</li><li>Wire protocols</li>
+            <li>C++</li><li>Networking</li><li>DNS</li>
           </ul>
         </article>
         <article class="project">
           <h3><a href="https://github.com/eliogovea/router-network-docker">Router-network Docker testbed</a></h3>
-          <p class="tagline">A reproducible network topology, no hardware required.</p>
-          <p>Containers arranged as clients behind a router-as-gateway talking to remote servers, so network applications can be exercised end-to-end — NAT, routing and all — without physical devices.</p>
+          <p class="tagline">Client → router → server, in containers, no hardware.</p>
+          <p>Exercises network applications end-to-end — NAT, routing and all — in containers.</p>
           <ul class="project-tags">
-            <li>Docker</li><li>Networking</li><li>Linux</li><li>Test infrastructure</li>
+            <li>Docker</li><li>Networking</li><li>Linux</li>
           </ul>
         </article>
         <article class="project">
           <h3><a href="https://github.com/eliogovea/dev-env-cpp">C++ project template</a></h3>
-          <p class="tagline">Same build on any machine.</p>
-          <p>A devcontainer pinning the toolchain, CMake presets covering multiple build configurations, and CI for coverage and documentation — so a new machine or a new contributor produces an identical build.</p>
+          <p class="tagline">Identical builds on any machine.</p>
+          <p>Pins the toolchain so a new machine or contributor produces an identical build.</p>
           <ul class="project-tags">
-            <li>C++</li><li>CMake</li><li>Docker</li><li>CI</li><li>Reproducible builds</li>
-          </ul>
-        </article>
-        <article class="project">
-          <h3><a href="https://github.com/eliogovea/baseball-limits-2d">Baseball Limits 2D</a></h3>
-          <p class="tagline">150 years of data in the browser, without a database.</p>
-          <p>
-            Which seasons does nobody strictly outperform on two statistics at once? That
-            is a Pareto frontier, and answering it interactively meant collecting and
-            normalizing the data, designing an encoding compact enough to ship the whole
-            history to the client rather than querying a server, and animating how each
-            frontier moved season by season.
-          </p>
-          <p class="project-links">
-            <a href="https://eliogovea.github.io/baseball-limits-2d/">Live demo ↗</a>
-          </p>
-          <ul class="project-tags">
-            <li>JavaScript</li><li>Python</li><li>Data pipeline</li><li>Pareto frontier</li><li>Data viz</li>
+            <li>C++</li><li>CMake</li><li>Docker</li><li>CI</li>
           </ul>
         </article>
         <article class="project">
           <h3><a href="https://github.com/eliogovea/suffix-automaton-vis">Automatic layout for a growing DAG</a></h3>
-          <p class="tagline">Readable and stable while the graph is still being built.</p>
-          <p>
-            Laying out a suffix automaton as it is constructed. Rather than a generic graph
-            layout, it uses the structure of the problem: states are added in order, so
-            construction order yields a level, and the level fixes one axis. Competing D3
-            forces settle the rest — per-level attractors, charge to keep states from
-            colliding, and a global pull toward the axis — tuned so the layout stays stable
-            instead of jumping as new states appear.
-          </p>
+          <p class="tagline">Construction order fixes one axis; forces settle the rest.</p>
+          <p>Laying out a suffix automaton as it is built, using the problem's structure instead of a generic graph layout.</p>
           <p class="project-links">
             <a href="https://eliogovea.github.io/suffix-automaton-vis/">Live demo ↗</a>
           </p>
           <ul class="project-tags">
-            <li>TypeScript</li><li>D3</li><li>Graph layout</li><li>Force simulation</li><li>Algorithms</li>
+            <li>TypeScript</li><li>D3</li><li>Graph layout</li>
+          </ul>
+        </article>
+        <article class="project">
+          <h3><a href="https://github.com/eliogovea/baseball-limits-2d">Baseball Limits 2D</a></h3>
+          <p class="tagline">Pareto frontiers over 150 years of MLB data, shipped client-side.</p>
+          <p>Pareto frontiers over MLB history: collection pipeline, an encoding compact enough to ship the whole history client-side, and animation of how each frontier moved.</p>
+          <p class="project-links">
+            <a href="https://eliogovea.github.io/baseball-limits-2d/">Live demo ↗</a>
+          </p>
+          <ul class="project-tags">
+            <li>JavaScript</li><li>Python</li><li>Data pipeline</li>
           </ul>
         </article>
       </div>
+      <a class="see-all" href="/projects/">More projects →</a>
     </section>
 
     <footer class="footer">
       <span>© <span id="year">2026</span> Elio Govea</span>
       <span>
-        <a href="/resume/">Resume</a> ·
-        <a href="assets/cv.pdf" download>Download CV (PDF)</a> ·
+        <a href="/assets/cv.pdf" download>Download CV (PDF)</a> ·
         <a href="https://github.com/eliogovea/eliogovea.github.io">Source</a>
       </span>
     </footer>
