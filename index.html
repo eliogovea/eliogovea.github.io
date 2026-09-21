@@ -395,6 +395,13 @@
     .project:hover { border-color: var(--muted); }
 
     .project h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+    .project h3 .year {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.82em;
+      font-family: var(--font-sans);
+      font-variant-numeric: tabular-nums;
+    }
     .project .tagline {
       color: var(--muted);
       font-size: 0.9rem;
@@ -693,7 +700,7 @@
       <div class="skill-group">
         <span class="label">Build &amp; CI</span>
         <ul class="pills">
-          <li>CMake</li><li>GNU Make</li><li>Cross-compilation</li><li>Git</li><li>Docker</li><li>LXC</li><li>Jenkins</li><li>AWS CI</li>
+          <li>CMake</li><li>GNU Make</li><li>Cross-compilation</li><li>Git</li><li>Docker</li><li>LXC</li><li>Jenkins</li><li>AWS CI</li><li>Valgrind</li><li>Visual Studio</li>
         </ul>
       </div>
       <div class="skill-group">
@@ -721,11 +728,11 @@
         <p class="entry-sub">Vantaa, Finland · <a href="https://www.vaisala.com/en/products/systems/avimet">AviMet</a> aviation weather platform — deployed across 170+ countries, 2,500+ systems delivered</p>
         <ul>
           <li>
-            Made AviMet's behavior provable to the standard a regulated aviation domain
-            demands — one programmable reference driving both the legacy and modernized
-            systems into arbitrary states from simulated sensor data, with time-varying
-            weather scenarios and deterministic setup, so correctness can be verified
-            repeatably and equivalence testing becomes possible.
+            Made AviMet's behavior provable to the standard <strong>ICAO Annex 3</strong>
+            aeronautical meteorology demands — one programmable reference driving both the
+            legacy and modernized systems into arbitrary states from simulated sensor data,
+            spanning weather scenarios, sensor input and communication protocols, so
+            correctness can be verified repeatably and equivalence testing becomes possible.
           </li>
           <li>
             Replaced GUI-bound tooling with an interface developers, testers and AI-assisted
@@ -743,8 +750,11 @@
             across Vaisala products beyond AviMet.
           </li>
           <li>
-            Hardened a long-lived codebase as it moved onto new platforms — root-causing
-            memory leaks and corner-case crashes latent for years.
+            Hardened a long-lived C++ codebase spanning Windows and Linux — root-caused a
+            32-bit Windows leak that presented as a null-pointer dereference, and a leak
+            triggered only by audio-device disconnect, which on a remote machine happens
+            only once the RDP session ends: it never reproduced while anyone was watching
+            (Valgrind, Visual Studio).
           </li>
         </ul>
       </article>
@@ -754,7 +764,7 @@
           <h3><a href="https://www.f-secure.com/">F-Secure</a></h3>
           <span class="meta"><time datetime="2020-09">Sep 2020</time> – <time datetime="2025-02">Feb 2025</time></span>
         </div>
-        <p class="entry-sub">Helsinki, Finland · Poznań, Poland · Sense SDK — C++ home-router security embedded by 200+ service-provider partners</p>
+        <p class="entry-sub">Helsinki, Finland · Poznań, Poland · Sense SDK — C++ home-router security embedded by 200+ service-provider partners · 8–10 developers, ~20 with integration and test</p>
 
         <div class="role-row">
           <div class="role-head">
@@ -859,7 +869,7 @@
       <h2 id="projects-h">Selected projects</h2>
       <div class="projects-grid">
         <article class="project">
-          <h3><a href="https://github.com/eliogovea/dns">DNS library</a></h3>
+          <h3><a href="https://github.com/eliogovea/dns">DNS library</a> <span class="year">2022–2024</span></h3>
           <p class="tagline">Wire format parsed and generated from scratch.</p>
           <p>Parses and emits DNS messages against the wire format directly, with example resolvers for common query types.</p>
           <ul class="project-tags">
@@ -867,7 +877,7 @@
           </ul>
         </article>
         <article class="project">
-          <h3><a href="https://github.com/eliogovea/router-network-docker">Router-network Docker testbed</a></h3>
+          <h3><a href="https://github.com/eliogovea/router-network-docker">Router-network Docker testbed</a> <span class="year">2024</span></h3>
           <p class="tagline">Client → router → server, in containers, no hardware.</p>
           <p>Exercises network applications end-to-end — NAT, routing and all — in containers.</p>
           <ul class="project-tags">
@@ -875,7 +885,7 @@
           </ul>
         </article>
         <article class="project">
-          <h3><a href="https://github.com/eliogovea/dev-env-cpp">C++ project template</a></h3>
+          <h3><a href="https://github.com/eliogovea/dev-env-cpp">C++ project template</a> <span class="year">2021–2026</span></h3>
           <p class="tagline">Identical builds on any machine.</p>
           <p>Pins the toolchain so a new machine or contributor produces an identical build.</p>
           <ul class="project-tags">
@@ -883,7 +893,7 @@
           </ul>
         </article>
         <article class="project">
-          <h3><a href="https://github.com/eliogovea/suffix-automaton-vis">Automatic layout for a growing DAG</a></h3>
+          <h3><a href="https://github.com/eliogovea/suffix-automaton-vis">Automatic layout for a growing DAG</a> <span class="year">2019–2026</span></h3>
           <p class="tagline">Construction order fixes one axis; forces settle the rest.</p>
           <p>Laying out a suffix automaton as it is built, using the problem's structure instead of a generic graph layout.</p>
           <p class="project-links">
@@ -894,7 +904,7 @@
           </ul>
         </article>
         <article class="project">
-          <h3><a href="https://github.com/eliogovea/baseball-limits-2d">Baseball Limits 2D</a></h3>
+          <h3><a href="https://github.com/eliogovea/baseball-limits-2d">Baseball Limits 2D</a> <span class="year">2024–2026</span></h3>
           <p class="tagline">Pareto frontiers over 150 years of MLB data, shipped client-side.</p>
           <p>Pareto frontiers over MLB history: collection pipeline, an encoding compact enough to ship the whole history client-side, and animation of how each frontier moved.</p>
           <p class="project-links">
